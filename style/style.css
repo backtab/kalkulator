@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+body {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #E8F1F5,#E8F1F5);
+    text-align: center;
+    color: #c95a0a;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1{
+    font-size: 32px;
+    color: #c95a0a;
+}
+
+
+
+#liniaLogo {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(251, 255, 0) 50%, rgb(121, 76, 9) 100%);
+    width: 850px;
+    height: 3px;
+}
+
+#wprowadz {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#daneWejsciowe{
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 14px 18px 19px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 14px 18px 19px -13px rgba(0,0,0,0.75);
+    box-shadow: 14px 18px 19px -13px rgba(0,0,0,0.75);
+    text-align: left;
+    font-family: sans-serif;
+}
+
+tr:first-child{
+    background-color: #c95a0a;
+    color: #E8F1F5;
+    font-size: 1.1rem;
+}
+
+table, th, td{
+    border: 1px solid gray;
+    padding: 15px;
+    text-align: center;
+}
+
+input {
+    width: 70px;
+    text-align: center;
+}
+
+#przyciski {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 625px;
+}
+#przycisk {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+sub {
+    font-size: 0.7rem;
+}
+
+#fwd, #fwr, #fwg {
+    width: 35px;
+}
+
+.wyroznij {
+    background-color: #c95a0a;
+    color: white;
+}
+
+#wyczysc, #wroc, #oblicz {
+    margin-top: 25px;
+    margin-right: 25px;
+    background-color: #c95a0a;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 20px;
+    color: #E8F1F5;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    width: 300px;
+}
+
+#wroc2 {
+    margin-top: 25px;
+    margin-right: 25px;
+    background-color: #c95a0a;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 20px;
+    color: #E8F1F5;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    width: 300px;
+}
+#wyczysc:hover, #wroc:hover, #wroc2:hover, #oblicz:hover {
+    background-color: #008CBA;
+    cursor: pointer;
+}
+
+#przekroje {
+    font-size: 13px;
+    text-align: left;
+}
+
+#wynik {
+    display: none;
+}
+
+.blad {
+    background: red;
+    color: black;    
+    border: 2px solid #c95a0a;
+}
+
+.poprawnie {
+    background: greenyellow;
+    color: black;    
+    border: 2px solid #014d01f1;
+}
+.podpowiedz {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.podpowiedz .podpTekst {
+    visibility: hidden;
+    width: 150px;
+    background-color: rgb(3, 70, 109);
+    color: #fff;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 6px;
+    border: 1px solid white;
+  
+    /* Pozycja tekstu podpowiedzi */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -160px;
+  
+    /* Pojawienie się */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+  /* Strzałka podpowiedzi */
+.podpowiedz .podpTekst::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(3, 70, 109) transparent transparent transparent;
+  }
+  
+  /* Pokaz podpowiedz po najechaniu myszką */
+.podpowiedz:hover .podpTekst {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.pogrubione {
+    font-weight: bold;
+}
+
+::placeholder{
+    color: black;
+    opacity: 0.25;
+}
+
+img{
+    height: 500px;
+    width: 700px;
+}

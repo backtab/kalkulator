@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kalkulator układów wlewowych</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+    <h1>Kalkulator do obliczania układów wlewowych z żeliwa</h1>
+    <div id="liniaLogo"></div>
+    <div id="container">
+        <p id="wprowadz">Poniżej wprowadź wszystkie potrzebne dane.</p>
+        </p>Po najechaniu kursorem na znak zapytania pojawi się podpowiedź odnośnie zalecanej wartości.</p>
+
+        <table id="daneWejsciowe">
+            <tr>
+                <td class="header"><b>Dana</b></td>
+                <td class="header"><b>Jednostka</b></td>
+                <td class="header"><b>Wartość</b></td>
+            </tr>
+            <tr>
+                <td><b>Ilość odlewów w formie</b></td>
+                <td>[szt]</td>
+                <td><input type="number" id="ileOdlewow" placeholder="2">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Ilość odlewów musi być większa lub równa 1.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Ilość odlewów zasilanych przez wlew rozprowadzający</b></td>
+                <td>[szt]</td>
+                <td><input type="number" id="ileOdlewowWR" placeholder="2">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Ilość odlewów zasilających układ musi być większa lub równa 1.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Liczba wlewów doprowadzających na jeden odlew</b></td>
+                <td>[szt]</td>
+                <td><input type="number" id="ileWD" placeholder="2">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Ilość wlewów doprowadzających musi być większa lub równa 1.</span>
+                    </div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td><b>Grubość ścianki</b></td>
+                <td>[cm]</td>
+                <td><input type="number" id="gruboscScianki" placeholder="10">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Grubość ścianki musi być większa od 0.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Współczynnik sprawności</b></td>
+                <td>[-]</td>
+                <td><input type="number" id="wspSprawnosci" placeholder="0.42">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Współczynnik sprawności zawiera się od 0.35 dla dużego oporu formy do
+                            0.5 dla małego oporu</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Parametr C</b></td>
+                <td>[cm]</td>
+                <td><input type="number" id="paramC" placeholder="1.4">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Parametr C musi być większy od 0.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Ciśnienie metalostatyczne</b></td>
+                <td>[cm]</td>
+                <td><input type="number" id="cisMetal" placeholder="10">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Musi być większe od 0.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Współczynnik k (uzysk)</b></td>
+                <td>[-]</td>
+                <td><input type="number" id="uzysk" placeholder="1.2">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Dla żeliwa przyjmuje się uzysk od 1.2 do 1.35</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Współczynnik s (dla czasu zalewania)</b></td>
+                <td>[-]</td>
+                <td><input type="number" id="wspSdlaCZ" placeholder="1.4">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Współczynnik s przyjmuje się od 1.4 do 1.6.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Objętość surowego odlewu</b></td>
+                <td>[cm<sup>3</sup>]</td>
+                <td><input type="number" id="objOdlewu" placeholder="32.5">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Objętość odlewu musi być większa od 0.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Gęstość właściwa stopu</b></td>
+                <td>[g/cm<sup>3</sup>]</td>
+                <td><input type="number" id="gestStopu" placeholder="7.2">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Gęstość dla żeliwa przyjmuje się 7.2.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Stosunek powierzchni przekrojów elementów układu wlewowego</b></td>
+                <td>[-]</td>
+                <td>
+                    <p style="word-spacing: 0.42cm; text-align:left; font-weight: bold;">F<sub>WD</sub> :F<sub>WR</sub>
+                        :F<sub>WG</sub></p>
+                    <input type="number" id="fwd" placeholder="1"> :
+                    <input type="number" id="fwr" placeholder="1.2"> :
+                    <input type="number" id="fwg" placeholder="1.4">
+                    <div class="podpowiedz">[?]
+                        <span class="podpTekst">Stosunki powierzchni przekrojów dla żeliwa<br><br>
+                            F<sub>WD</sub> : F<sub>WR</sub> : F<sub>WG</sub><br>
+                            1 : 1.2&divide;2 : 1&divide;1.5<br><br>
+                            <div id="przekroje">
+                                <i style="font-weight: bold;">F<sub>WD</sub></i> - przekrój wlewu doprowadzającego,<br>
+                                <i style="font-weight: bold;">F<sub>WR</sub></i> - przekrój wlewu rozprowadzającego,<br>
+                                <i style="font-weight: bold;">F<sub>WG</sub></i> - przekrój wlewu głównego.
+                            </div>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="przyciski">
+            <a href="#"><button id="wyczysc" onclick="location.reload()">Wyczyść dane</button></a>
+            <a href="#"><button id="oblicz" onclick="test()">Oblicz</button></a>
+        </div>
+        <br><br>
+        <img src="img/predkosc.png" alt="predkosc">
+        <br><br>
+        <img src="img/sprawnosc.png" alt="sprawnosc">
+        <br><br>
+        <img src="img/HZZSRAJ.jpg" alt="cisnienie">
+    </div>
+    <div id="wynik">
+        <p id="wprowadz">Poniżej znajdują się wyniki obliczeń: </p>
+        <table id="daneWejsciowe">
+            <tr>
+                <td class="header"><b>Dana</b></td>
+                <td class="header"><b>Symbol</b></td>
+                <td class="header"><b>Wartość</b></td>
+                <td class="header"><b>Jednostka</b></td>
+            </tr>
+            <tr>
+                <td><b>Masa surowego odlewu</b></td>
+                <td class="wyroznij">Q<sub>odl</sub></td>
+                <td class="wyroznij pogrubione"><span id="masaOdlewu">0</span></td>
+                <td class="wyroznij">[kg]</td>
+            </tr>
+            <tr>
+                <td><b>Masa surowego odlewu z układem zasilającym i wlewowym</b></td>
+                <td class="wyroznij">Q<sub>c</su</td>
+                <td class="wyroznij pogrubione"><span id="masaOdlewuZUW">0</span></td>
+                <td class="wyroznij">[kg]</td>
+            </tr>
+            <tr>
+                <td><b>Zalecany czas zalewania</b></td>
+                <td class="wyroznij">&#120591;</td>
+                <td class="wyroznij pogrubione"><span id="czasZ">0</span></td>
+                <td class="wyroznij">[s]</td>
+            </tr>
+            <tr>
+                <td><b>Przekrój wlewu głównego</b></td>
+                <td class="wyroznij">F<sub>WG</sub></td>
+                <td class="wyroznij pogrubione"><span id="przWG">0</span></td>
+                <td class="wyroznij">[cm<sup>2</sup>]</td>
+            </tr>
+            <tr>
+                <td><b>Przekrój wlewu rozprowadzającego</b></td>
+                <td class="wyroznij">F<sub>WR</sub></td>
+                <td class="wyroznij pogrubione"><span id="przWR">0</span></td>
+                <td class="wyroznij">[cm<sup>2</sup>]</td>
+            </tr>
+            <tr>
+                <td><b>Przekrój pojedynczego wlewu doprowadzającego</b></td>
+                <td class="wyroznij">F<sub>WD</sub></td>
+                <td class="wyroznij pogrubione"><span id="przWD">0</span></td>
+                <td class="wyroznij">[cm<sup>2</sup>]</td>
+            </tr>
+            <tr>
+                <td><b>Suma powierzchni przekrojów wlewów doprowadzających</b></td>
+                <td class="wyroznij">&Sigma;F<sub>WD</sub></td>
+                <td class="wyroznij pogrubione"><span id="sumaPrzWD">0</span></td>
+                <td class="wyroznij">[cm<sup>2</sup>]</td>
+            </tr>
+            <tr>
+                <td><b>Objętość zbiornika wlewowego</b></td>
+                <td class="wyroznij">V</td>
+                <td class="wyroznij pogrubione"><span id="objZW">0</span></td>
+                <td class="wyroznij">[cm<sup>3</sup>]</td>
+            </tr>
+            <tr>
+                <td><b>Prędkość liniowa podnoszenia się metalu w formie</b></td>
+                <td class="wyroznij">&#977;</td>
+                <td class="wyroznij pogrubione"><span id="prLin">0</span></td>
+                <td class="wyroznij">[cm/s]</td>
+            </tr>
+        </table>
+<br>
+        <img src="img/predkosc.png" alt="predkosc">
+
+        <br>
+        <div id="przycisk">
+            <a href="index.html"><button id="wroc2">Wróć</button></a>
+        </div>
+    </div>
+    <script src="oblicz.js" type="text/javascript"></script>
+    <br><br>
+    <p id="footer">Copyright &copy 2023 Przemysław Grudziński</p>
+</body>
+
+</html>
